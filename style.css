@@ -1,0 +1,349 @@
+/* 
+    ================================
+    RESET DASAR
+    ================================
+
+    Tujuannya agar ukuran elemen lebih mudah dikontrol.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+    MATERI: Body
+
+    font-family = jenis font
+    line-height = jarak antar baris
+    background = warna latar
+    color = warna teks
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* 
+    Agar gambar/link/teks tidak terlalu mepet layar.
+*/
+
+section,
+header,
+footer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* 
+    ================================
+    HEADER
+    ================================
+
+    Mobile-first:
+    Di layar kecil, logo dan nav dibuat vertikal.
+*/
+
+.site-header {
+    background: white;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e7eb;
+
+    /* 
+        MATERI FLEXBOX
+
+        display: flex;
+        Membuat anak-anak header bisa diatur fleksibel.
+
+        flex-direction: column;
+        Untuk mobile, logo di atas dan nav di bawah.
+    */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Logo */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-icon {
+    font-size: 24px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navigasi */
+.main-nav {
+    display: flex;
+
+    /* 
+        Mobile:
+        Link navigasi turun ke bawah.
+    */
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    color: #2563eb;
+}
+
+/* 
+    ================================
+    HERO SECTION
+    ================================
+*/
+
+.hero-section {
+    min-height: 380px;
+    display: flex;
+
+    /* 
+        justify-content mengatur posisi secara horizontal
+        ketika flex-direction default-nya row.
+
+        align-items mengatur posisi secara vertikal.
+    */
+    align-items: center;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.label {
+    color: #2563eb;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    margin-bottom: 24px;
+    color: #4b5563;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* 
+    ================================
+    SECTION UMUM
+    ================================
+*/
+
+.services-section,
+.about-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: #4b5563;
+}
+
+/* 
+    ================================
+    CSS GRID
+    ================================
+
+    Ini bagian penting UKL.
+
+    Mobile-first:
+    Awalnya dibuat 1 kolom.
+*/
+
+.card-grid {
+    display: grid;
+
+    /* Mobile: 1 kolom */
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.service-card p {
+    color: #4b5563;
+}
+
+/* 
+    ================================
+    FOOTER
+    ================================
+
+    Mobile:
+    Footer 1 kolom dan rata tengah.
+*/
+
+.site-footer {
+    background: #111827;
+    color: white;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.footer-brand p {
+    color: #d1d5db;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* 
+    ===================================================
+    MEDIA QUERY TABLET
+    ===================================================
+
+    Berlaku untuk layar 768px ke atas.
+    Di kisi-kisi UKL, tablet memakai grid 2 kolom.
+*/
+
+@media (min-width: 768px) {
+
+    /* 
+        HEADER TABLET/DESKTOP
+
+        Logo kiri, navigasi kanan.
+    */
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav {
+        flex-direction: row;
+    }
+
+    /* 
+        GRID TABLET
+
+        2 kolom.
+    */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 
+        FOOTER TABLET
+
+        Branding kiri, menu kanan.
+    */
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-nav {
+        flex-direction: row;
+    }
+}
+
+/* 
+    ===================================================
+    MEDIA QUERY DESKTOP
+    ===================================================
+
+    Berlaku untuk layar 1024px ke atas.
+    Di kisi-kisi UKL, desktop memakai grid 3 kolom.
+*/
+
+@media (min-width: 1024px) {
+
+    /* 
+        Agar konten tidak terlalu melebar di layar besar.
+    */
+    section,
+    header,
+    footer {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    /* 
+        GRID DESKTOP
+
+        3 kolom.
+    */
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

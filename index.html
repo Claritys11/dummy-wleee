@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 
+        Materi: Responsive Meta Tag
+        Ini wajib agar layout responsive bekerja dengan benar di HP.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latihan UKL Web Responsive</title>
+
+    <!-- Menghubungkan HTML dengan CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        MATERI 1: HEADER SEMANTIK
+
+        <header> = bagian kepala halaman.
+        Biasanya berisi logo, judul, dan navigasi.
+        -->
+    <header class="site-header">
+
+        <!-- Logo / Branding kiri -->
+        <div class="brand">
+            <span class="brand-icon">◆</span>
+            <span class="brand-name">TelkomShop</span>
+        </div>
+
+        <!-- 
+            MATERI 2: NAV SEMANTIK
+
+            <nav> = khusus untuk kumpulan link navigasi.
+            Nav bisa berada di dalam header.
+        -->
+        <nav class="main-nav">
+            <a href="#home">Home</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+    <!-- 
+        MATERI 3: MAIN
+
+        <main> = isi utama halaman.
+    -->
+    <main>
+
+        <!-- Section Hero -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <p class="label">Latihan UKL Web Responsive</p>
+                <h1>Bangun Halaman Web yang Rapi dan Responsive</h1>
+                <p>
+                    Template ini dibuat untuk latihan HTML semantik, Flexbox,
+                    CSS Grid, dan Media Query.
+                </p>
+                <a href="#layanan" class="btn-primary">Mulai Belajar</a>
+            </div>
+        </section>
+
+        <!-- 
+            MATERI 4: SECTION LAYANAN
+
+            Di bagian ini kita latihan CSS Grid.
+            Target UKL:
+            - Mobile: 1 kolom
+            - Tablet: 2 kolom
+            - Desktop: 3 kolom
+        -->
+        <section id="layanan" class="services-section">
+
+            <div class="section-heading">
+                <p class="label">Materi Grid</p>
+                <h2>3 Kartu Layanan</h2>
+                <p>
+                    Coba resize browser kamu. Jumlah kolom akan berubah
+                    sesuai ukuran layar.
+                </p>
+            </div>
+
+            <div class="card-grid">
+
+                <article class="service-card">
+                    <h3>HTML Semantik</h3>
+                    <p>
+                        Belajar menggunakan tag seperti header, nav, section,
+                        main, article, dan footer.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>CSS Flexbox</h3>
+                    <p>
+                        Cocok untuk mengatur layout satu baris seperti header,
+                        navigasi, dan footer.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>CSS Grid</h3>
+                    <p>
+                        Cocok untuk membuat layout kartu responsive seperti
+                        1 kolom, 2 kolom, dan 3 kolom.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Section Tentang -->
+        <section id="tentang" class="about-section">
+            <div class="section-heading">
+                <p class="label">Materi Tambahan</p>
+                <h2>Kenapa Mobile First?</h2>
+                <p>
+                    Dalam CSS ini, desain awal dibuat untuk mobile terlebih dahulu.
+                    Setelah itu, layout diperbesar menggunakan media query.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 
+        MATERI 5: FOOTER RESPONSIVE
+
+        Target UKL:
+        - Mobile: footer 1 kolom, rata tengah
+        - Tablet/Desktop: footer 2 kolom
+    -->
+    <footer id="kontak" class="site-footer">
+
+        <div class="footer-brand">
+            <h2>TelkomShop</h2>
+            <p>Latihan layout responsive untuk persiapan UKL.</p>
+        </div>
+
+        <nav class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#layanan">Layanan</a>
+            <a href="#tentang">Tentang</a>
+        </nav>
+
+    </footer>
+
+</body>
+</html>
